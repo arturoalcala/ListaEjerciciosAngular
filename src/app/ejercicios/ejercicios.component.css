@@ -1,0 +1,7 @@
+.ejercicio-realizado {
+  font-weight: 700;
+  background-color:#661396;
+  color: #fff;
+  padding: 5px;
+  transition: all .5s ease-in-out;
+}

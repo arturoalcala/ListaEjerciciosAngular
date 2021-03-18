@@ -1,0 +1,64 @@
+<h1>Angular 8 Bootstrap 4 Tooltip Example - ItSolutionStuff.com</h1>
+
+<button type="button" class="btn btn-outline-secondary mr-2" placement="top" ngbTooltip="Tooltip on top">
+  Tooltip on top
+</button>
+
+<button type="button" class="btn btn-outline-secondary mr-2" placement="right" mbd ngbTooltip="Tooltip on right">
+  Tooltip on right
+</button>
+
+<button type="button" class="btn btn-outline-secondary mr-2" placement="bottom" ngbTooltip="Tooltip on bottom">
+  Tooltip on bottom
+</button>
+
+<button type="button" class="btn btn-outline-secondary mr-2" placement="left" ngbTooltip="Tooltip on left">
+  Tooltip on left
+</button>
+
+<h2>Objecto</h2>
+<span><strong>ID:</strong> {{ejercicio.id}}</span>
+<br>
+<span><strong>Nombre:</strong> {{ejercicio.name | uppercase}}</span>
+<br>
+<div>
+  <label>ID:</label>
+  <input [(ngModel)]="ejercicio.id" placeholder="id" type="number" />
+</div>
+<div>
+  <label>Nombre:</label>
+  <input [(ngModel)]="ejercicio.name" placeholder="nombre" />
+</div>
+
+<br >
+<hr />
+
+<h2>Lista de objetos</h2>
+<ul>
+  <li *ngFor="let e of ejercicios" (click)="onSelectEjercicicio(e)" class="{{e==ejercicioRealizado ? 'ejercicio-realizado' : ''}}">
+    <span>{{e.id + " - " + e.name}}</span>
+  </li>
+</ul>
+
+<br >
+<hr />
+
+<app-ejercicio-detalle [ejercicioRealizado]="ejercicioRealizado"></app-ejercicio-detalle>
+
+<h2>Lista de ingredientes</h2>
+<input #ingrediente
+      (keyup.enter)="agregarIngrediente(ingrediente.value)"
+      (blur)="agregarIngrediente(ingrediente.value); ingrediente.value='' ">
+
+<button (click)="agregarIngrediente(ingrediente.value)">Agregar</button>
+
+<!-- <input style="background-color:{{myCol}}" ng-model="myCol"> -->
+
+<ul>
+  <li *ngFor="let i of ingredientes">
+    <span>{{i}}</span>
+  </li>
+</ul>
+
+<br >
+<hr />
